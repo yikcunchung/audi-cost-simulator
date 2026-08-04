@@ -467,12 +467,14 @@
     }
 
     /* ── RESULT CARD ────────────────────────────────────────────────────── */
+    .result-cta-group { display: flex; flex-direction: column; gap: 20px; }
     .section-result {
       background: var(--surface-card);
       border-radius: var(--radius-card);
       padding: 24px;
       display: flex; flex-direction: column; gap: 20px;
     }
+    #section-cta .btn-group { margin-top: 0; }
     .result-headline { display: flex; align-items: center; gap: 4px; }
     .result-label {
       font-family: var(--font-copy);
@@ -1228,65 +1230,71 @@
         </div>
       </div>
 
-      <!-- Result card -->
-      <div class="section-result">
-        <div>
-          <div class="result-headline">
-            <span class="result-label">Estimated cost</span>
-            <button class="info-btn" aria-label="More info">
-              <img src="assets/icons/info.svg" width="16" height="16" alt="">
-            </button>
+      <div class="result-cta-group">
+        <!-- Result card -->
+        <div class="section-result">
+          <div>
+            <div class="result-headline">
+              <span class="result-label">Estimated cost</span>
+              <button class="info-btn" aria-label="More info">
+                <img src="assets/icons/info.svg" width="16" height="16" alt="">
+              </button>
+            </div>
+            <p class="result-sub-label">Cost of electricity from:</p>
+            <p class="cost-value" id="cost-value"></p>
           </div>
-          <p class="result-sub-label">Cost of electricity from:</p>
-          <p class="cost-value" id="cost-value"></p>
-        </div>
 
-        <div class="cost-stats-grid">
-          <div class="cost-stat">
-            <span class="cost-stat-label">Charging frequency:</span>
-            <span class="cost-stat-value" id="stat-freq">2 x / Week</span>
+          <div class="cost-stats-grid">
+            <div class="cost-stat">
+              <span class="cost-stat-label">Charging frequency:</span>
+              <span class="cost-stat-value" id="stat-freq">2 x / Week</span>
+            </div>
+            <div class="cost-stat">
+              <span class="cost-stat-label">CO₂ emissions:</span>
+              <span class="cost-stat-value" id="stat-co2">0 t CO₂</span>
+            </div>
           </div>
-          <div class="cost-stat">
-            <span class="cost-stat-label">CO₂ emissions:</span>
-            <span class="cost-stat-value" id="stat-co2">0 t CO₂</span>
-          </div>
-        </div>
 
-        <hr class="cost-divider">
+          <hr class="cost-divider">
 
-        <div class="cost-comparison">
-          <div class="cost-compare-row">
-            <div class="cost-compare-item">
-              <span class="cost-compare-label">Petrol cost:</span>
-              <span class="cost-compare-value" id="cmp-petrol-cost">£4,130</span>
-            </div>
-            <div class="cost-compare-item">
-              <span class="cost-compare-label">Petrol CO₂ emissions:</span>
-              <span class="cost-compare-value" id="cmp-petrol-co2">1.98 t CO₂</span>
-            </div>
-          </div>
-          <div class="cost-compare-row">
-            <div class="cost-compare-item">
-              <span class="cost-compare-label">Diesel cost:</span>
-              <span class="cost-compare-value" id="cmp-diesel-cost">£2,130</span>
-            </div>
-            <div class="cost-compare-item">
-              <span class="cost-compare-label">Diesel CO₂ emissions:</span>
-              <span class="cost-compare-value" id="cmp-diesel-co2">1.88 t CO₂</span>
-            </div>
-          </div>
-        </div>
-        <div class="btn-group" id="btn-group-nxt">
-          <a class="btn-primary" id="btn-build" target="_blank">Build</a>
-          <div class="text-link-group">
-            <div class="text-link-standalone">
-              <div class="text-link-content">
-                <a class="text-link" id="link-new-cars" target="_blank"></a>
+          <div class="cost-comparison">
+            <div class="cost-compare-row">
+              <div class="cost-compare-item">
+                <span class="cost-compare-label">Petrol cost:</span>
+                <span class="cost-compare-value" id="cmp-petrol-cost">£4,130</span>
+              </div>
+              <div class="cost-compare-item">
+                <span class="cost-compare-label">Petrol CO₂ emissions:</span>
+                <span class="cost-compare-value" id="cmp-petrol-co2">1.98 t CO₂</span>
               </div>
             </div>
-            <div class="text-link-standalone">
-              <div class="text-link-content">
-                <a class="text-link" id="link-used-cars" target="_blank"></a>
+            <div class="cost-compare-row">
+              <div class="cost-compare-item">
+                <span class="cost-compare-label">Diesel cost:</span>
+                <span class="cost-compare-value" id="cmp-diesel-cost">£2,130</span>
+              </div>
+              <div class="cost-compare-item">
+                <span class="cost-compare-label">Diesel CO₂ emissions:</span>
+                <span class="cost-compare-value" id="cmp-diesel-co2">1.88 t CO₂</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="section-result" id="section-cta">
+          <div class="btn-group" id="btn-group-nxt">
+            <a class="btn-primary" id="btn-build" target="_blank">Build</a>
+            <div class="text-link-group">
+              <div class="text-link-standalone">
+                <div class="text-link-content">
+                  <a class="text-link" id="link-new-cars" target="_blank"></a>
+                </div>
+              </div>
+              <div class="text-link-standalone">
+                <div class="text-link-content">
+                  <a class="text-link" id="link-used-cars" target="_blank"></a>
+                </div>
               </div>
             </div>
           </div>
